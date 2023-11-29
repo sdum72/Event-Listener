@@ -9,8 +9,10 @@ function setCounterText() {
 
 // TODO: Add event listener to increment button
 incrementEl.addEventListener('click', () =>{
-  count++
-  setCounterText()
+  countEl.textContent = count += 1;
+  // setCounterText();
+  // count++
+  // setCounterText()
 })
 
 // TODO: Add event listener to decrement button 
@@ -19,4 +21,22 @@ decrementEl.addEventListener('click', () =>{
     count--
   }
   setCounterText()
+})
+
+
+document.addEventListener('keyup', function(event) {
+  console.log('event.key');
+  //
+  if (event.key === '+') {
+    count = count + 1;
+    setCounterText();
+  }
+
+  if (event.key === '-') {
+    if (count > 0) {
+      count = count - 1;
+      setCounterText();
+
+    }
+   
 })
